@@ -125,7 +125,7 @@ def run_comps_valuation(company: PortfolioCompany) -> tuple[dict, list[dict]]:
 
     #1. Fetch all peers
     all_peers=get_peers(company.sector)
-    log("data_fetch",f"Fetched {len(all_peers)} publicly traded {company.sector.value} peers.", 
+    log("fetch_peers",f"Fetched {len(all_peers)} publicly traded {company.sector.value} peers.", 
         {
             "source": "Mock public comps dataset",
             "companies_available":[p.name for p in all_peers],
@@ -133,8 +133,8 @@ def run_comps_valuation(company: PortfolioCompany) -> tuple[dict, list[dict]]:
     )
 
     #2. Select peer group
-    peers=all_peers[:MAX_PEERS]
-    log("peer_selection",f"Selected {len(peers)} peers from available set of {len(all_peers)}.", 
+    peers=all_peers[:MAX_PEERS] #up to 6
+    log("select_peers",f"Selected {len(peers)} peers from available set of {len(all_peers)}.", 
         {
             "tickers":[p.ticker for p in peers],
             "peer_names":[p.name for p in peers],

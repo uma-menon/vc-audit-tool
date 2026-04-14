@@ -48,14 +48,14 @@ def main() -> None:
 
     #Run valuation calc.
     try:
-        result, audit_entries=run_comps_valuation(company)
+        result, entries=run_comps_valuation(company)
     except Exception as e:
         print(f"Valuation error: {e}",file=sys.stderr)
         sys.exit(1)
 
     #Render output
-    if args.output: render_json(result,audit_entries,args.output)
-    else: render_terminal(result,audit_entries)
+    if args.output: render_json(result,entries,args.output)
+    else: render_terminal(result,entries)
 
 
 if __name__ == "__main__":
