@@ -23,18 +23,18 @@ pip install pydantic
 
 **From a JSON file:**
 ```zsh
-python main.py --input data/sample_basisai.json
-python main.py --input data/sample_inflo.json
+python3 main.py --input data/sample_basisai.json
+python3 main.py --input data/sample_inflo.json
 ```
 
 **Inline:**
 ```zsh
-python main.py --company "Basis AI" --sector saas --revenue 10000000
+python3 main.py --company "Basis AI" --sector saas --revenue 10000000
 ```
 
 **To save a JSON report instead of terminal output:**
 ```zsh
-python main.py --input data/sample_inflo.json --output report.json
+python3 main.py --input data/sample_inflo.json --output report.json
 ```
 
 Notes: 
